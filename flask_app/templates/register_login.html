@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Recipe Share</h1>
+    <h2>Register</h2>
+    <form action="/register_user", method="post">
+        <div>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <label>First Name</label>
+            <input name="first_name" type="text">
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input name="last_name" type="text">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input name="email" type="text">
+        </div>
+        <div>
+            <label>Your Password</label>
+            <input name="password" type="password">
+        </div>
+        <div>
+            <label>Confirm Password</label>
+            <input name="confirm_password" type="password">
+        </div>
+        <input type="submit" value="Register">
+    </form>
+    
+<div>
+    <form action="/login_user" method="post">
+        <h2>Login</h2>
+        <div>
+            <label>Email:</label>
+            <input name="email" type="text">
+        </div>
+        <div>
+            <label>Your Password</label>
+            <input name="password" type="password">
+        </div>
+        <input type="submit" value="Login">
+    </form>
+    <p>Not a user? Please Register above!</p>
+</div>
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+{% if messages %}                            <!-- check if there are any messages -->
+{% for message in messages %}            <!-- loop through the messages -->
+<p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+</body>
+</html>

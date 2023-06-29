@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing 1 Party</title>
+</head>
+<body>
+    <h1>{{one_party.what}}</h1>
+
+    <p>Posted By : {{one_party.party_poster.first_name}} {{one_party.party_poster.last_name}}</p>
+    <p>Location: {{one_party.location}}</p>
+    <p>When: {{one_party.date}}</p>
+    <p>All Ages: {% if one_party.all_ages==1 %} True {% else %} False {% endif%}</p>
+    <p>Description: {{one_party.description}}</p>
+
+    <div>
+        <a href="/dashboard">
+            <button>Home</button>
+        </a>
+    </div>
+</body>
+</html>
